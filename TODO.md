@@ -1,0 +1,4 @@
+- Add jest globals to eslint
+- Add description and references to challenges
+- Add optimal solution to operand.js
+- Add README
