@@ -1,18 +1,16 @@
-module.exports = (arr, match) => {
-  const sortedArray = [...arr].sort((a, b) => a - b);
-  let begin = 0;
-  let end = sortedArray.length - 1;
-  let sum = sortedArray[begin] + sortedArray[end];
-
-  while (begin < end) {
-    if (sum < match) {
-      begin += 1;
-    } else if (sum > match) {
-      end -= 1;
-    } else {
-      return [arr.indexOf(sortedArray[begin]), arr.lastIndexOf(sortedArray[end])];
+module.exports = (arr, sum) => {
+  const s = [];
+  const result = arr.reduce((acc, n) => {
+    let temp = sum - n;
+    if (temp >= 0 && s.includes(temp)) {
+      acc.push([n, temp].sort((a, b) => a - b));
     }
-    sum = sortedArray[begin] + sortedArray[end];
+    s.push(n);
+    return acc;
+  }, []);
+
+  if (result.length === 0) {
+    return [-1, -1];
   }
-  return [-1, -1];
+  return result;
 };
