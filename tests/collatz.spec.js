@@ -13,7 +13,8 @@ describe('collatz sequence', () => {
   it('should iterate from 19', () => {
     const sequence = collatz(19);
     const terms = [19, ...sequence];
-    expect(terms).toEqual([19, 58, 29, 88, 44, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1]);
+    expect(terms).toEqual([19, 58, 29, 88, 44, 22, 11, 34, 17, 52, 26, 13, 40,
+      20, 10, 5, 16, 8, 4, 2, 1]);
   });
 
   describe('when it starts with 27', () => {

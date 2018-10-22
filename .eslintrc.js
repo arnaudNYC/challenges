@@ -25,6 +25,14 @@ module.exports = {
     'semi': [
       'error',
       'always'
+    ],
+    'max-len': [
+      'error',
+      100,
+      { 'ignoreComments': true }
+    ],
+    'no-confusing-arrow': [
+      'error'
     ]
   }
 };
