@@ -1,0 +1,1 @@
+module.exports = (...functions) => n => functions.reduceRight((a, current) => current(a), n);
