@@ -17,7 +17,7 @@ export const fib = max => {
 
 // When transpiled to ES5, this code will run very poorly
 export const fibGen = max => ({
-  [Symbol.iterator]: function* () {
+  *[Symbol.iterator]() {
     let previous = 0;
     let current = 1;
     while (current <= max) {
